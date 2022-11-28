@@ -1,0 +1,48 @@
+.home{
+   
+    list-style: none;
+    text-decoration: none;
+}
+
+/* COLUMNA 1 - HOME */
+
+.col1 h5{
+padding: 10px 30px;
+background-color: rgb(0, 0, 0, 0.1);
+border-top-left-radius: 10%;
+border-top-right-radius: 10%;
+}
+
+.col1 .col1-category{
+    margin-bottom: 20px;
+}
+
+/* ESTILADO DE PRODUCTOS HOME */
+
+
+.link-mapeo-home{
+    text-decoration:none;
+}
+
+.card-img-home{
+    height: 200px;
+    object-fit: contain;
+    background-color: white;
+    padding: 15px 15px;
+}
+
+.card-body-home{
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.home .card-title-home{
+    font-size: 1rem; 
+}
+
+.btn-category{
+    cursor: pointer;
+}

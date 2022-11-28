@@ -1,5 +1,6 @@
+import { Container } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
-import { HashRouter, Routes,Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import LoadingScreen from './components/LoadingScreen'
 import NavBar from './components/NavBar'
@@ -16,12 +17,15 @@ function App() {
     <HashRouter>
       <NavBar />
       {isLoading && <LoadingScreen />}
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/product/:id" element={<ProductDetail />}/>
-        <Route path="/purchases" element={<Purchases />} />
-        <Route path="/login" element={<Login />}/>
-      </Routes>
+      <Container className='my-5'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/purchases" element={<Purchases />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Container>
     </HashRouter>
   )
 }
