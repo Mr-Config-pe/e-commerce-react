@@ -71,7 +71,7 @@ const ProductDetail = () => {
 
            
             {/* INICIO COLUMNAS BOOTSTRAP PRODUCTOS POR CATEGORIA O SIMILAR*/}
-            <Row xs={1} md={2} lg={3} className="g-4" >
+            <Row xs={1} md={2} lg={3} className="g-4 container-product-suggested" >
                 {/* INICIO MAPEANDO PRODUCTOS POR CATEGORY */}
                 {
                     relatedProducts.map(relatedProduct => (
