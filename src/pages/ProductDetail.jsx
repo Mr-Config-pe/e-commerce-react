@@ -31,7 +31,7 @@ const ProductDetail = () => {
 
     // Button para Agregar al Carrito
 
-const [quantity, setQuantity] = useState("");
+const [quantity, setQuantity] = useState("1");
 
   
     const addToCart = () => {
@@ -83,8 +83,10 @@ const [quantity, setQuantity] = useState("");
 
                 <Col lg={6} className="col2-product-detail">
                     {product?.description}
-                    <p><b>Price:</b> ${product?.price}</p>
-                    <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
+                    <div><b>Price:</b> ${product?.price}</div>
+                    <div>Quantity : 
+                    <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} style={{width:"50px"}}/>
+                    </div>
                     <Button onClick={addToCart}>Add to Cart</Button>
 
                 </Col>
