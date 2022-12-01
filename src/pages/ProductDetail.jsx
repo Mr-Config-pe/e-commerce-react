@@ -31,7 +31,7 @@ const ProductDetail = () => {
 
     // Button para Agregar al Carrito
 
-const [quantity, setQuantity] = useState("1");
+const [quantity, setQuantity] = useState("");
 
   
     const addToCart = () => {
