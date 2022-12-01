@@ -4,16 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { getProductsThunk } from '../store/slices/products.slice';
 import { Row, Col, Carousel, Card, Button } from 'react-bootstrap';
+import { createCartThunk } from '../store/slices/cart.slice';
 
 
 const ProductDetail = () => {
 
     const { id } = useParams();
 
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        dispath(getProductsThunk());
+        dispatch(getProductsThunk());
     }, [])
 
     const productList = useSelector(state => state.products)
@@ -24,7 +25,26 @@ const ProductDetail = () => {
         productItem.id !== product.id
     )
 
-    console.log(relatedProducts)
+
+
+    // console.log(relatedProducts)
+
+    // Button para Agregar al Carrito
+
+const [quantity, setQuantity] = useState("");
+
+  
+    const addToCart = () => {
+        const productSelect = {
+            id : product.id,
+            quantity : quantity
+        }
+
+        console.log(productSelect)
+        dispatch(createCartThunk(productSelect))
+        
+    }
+
 
     return (
         <div className='product-detail'>
@@ -64,7 +84,8 @@ const ProductDetail = () => {
                 <Col lg={6} className="col2-product-detail">
                     {product?.description}
                     <p><b>Price:</b> ${product?.price}</p>
-                    <Button>Add to Cart</Button>
+                    <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
+                    <Button onClick={addToCart}>Add to Cart</Button>
 
                 </Col>
             </Row>

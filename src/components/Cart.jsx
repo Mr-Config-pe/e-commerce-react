@@ -24,7 +24,7 @@ const Cart = ({ show, handleClose }) => {
             </Offcanvas.Header>
             <Offcanvas.Body>
                 {cart.map(product => (
-                    <div>{product.title}</div>
+                    <div key={product.id}>{product.title}</div>
                 ))}
             </Offcanvas.Body>
         </Offcanvas>
