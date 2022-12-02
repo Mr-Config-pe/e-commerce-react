@@ -31,20 +31,33 @@ const ProductDetail = () => {
 
     // Button para Agregar al Carrito
 
-const [quantity, setQuantity] = useState("");
+    const [quantity, setQuantity] = useState(1);
 
-  
+
     const addToCart = () => {
         const productSelect = {
-            id : product.id,
-            quantity : quantity
+            id: product.id,
+            quantity: quantity
         }
 
         console.log(productSelect)
         dispatch(createCartThunk(productSelect))
-        
+
     }
 
+
+    //Sumar Quantity
+
+    const sumQuantity = () => {
+        setQuantity(quantity + 1)
+    }
+
+    //Restar Quantity
+
+    const resQuantity = () => {
+        quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)
+        
+    }
 
     return (
         <div className='product-detail'>
@@ -84,15 +97,17 @@ const [quantity, setQuantity] = useState("");
                 <Col lg={6} className="col2-product-detail">
                     {product?.description}
                     <div><b>Price:</b> ${product?.price}</div>
-                    <div>Quantity : 
-                    <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} style={{width:"50px"}}/>
+                    <div className="container-quantity"><b>Quantity : </b>
+                        <Button onClick={resQuantity} className="btn-sum1"><i class="fa-solid fa-minus"></i></Button>
+                        <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} style={{ width: "70px", height: "70px"}} className="input-quantity"/>
+                        <Button onClick={sumQuantity} className="btn-res2"><i class="fa-solid fa-plus"></i></Button>
                     </div>
                     <Button onClick={addToCart}>Add to Cart</Button>
 
                 </Col>
             </Row>
 
-           
+
             {/* INICIO COLUMNAS BOOTSTRAP PRODUCTOS POR CATEGORIA O SIMILAR*/}
             <Row xs={1} md={2} lg={3} className="g-4 container-product-suggested" >
                 {/* INICIO MAPEANDO PRODUCTOS POR CATEGORY */}
