@@ -40,7 +40,7 @@ const ProductDetail = () => {
             quantity: quantity
         }
 
-        console.log(productSelect)
+        // console.log(productSelect)
         dispatch(createCartThunk(productSelect))
 
     }
@@ -96,11 +96,11 @@ const ProductDetail = () => {
 
                 <Col lg={6} className="col2-product-detail">
                     {product?.description}
-                    <div><b>Price:</b> ${product?.price}</div>
+                    <div className='price-product'><b>Price:</b> $ {product?.price}</div>
                     <div className="container-quantity"><b>Quantity : </b>
-                        <Button onClick={resQuantity} className="btn-sum1"><i class="fa-solid fa-minus"></i></Button>
+                        <Button onClick={resQuantity} className="btn-sum1"><i className="fa-solid fa-minus"></i></Button>
                         <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} style={{ width: "70px", height: "70px"}} className="input-quantity"/>
-                        <Button onClick={sumQuantity} className="btn-res2"><i class="fa-solid fa-plus"></i></Button>
+                        <Button onClick={sumQuantity} className="btn-res2"><i className="fa-solid fa-plus"></i></Button>
                     </div>
                     <Button onClick={addToCart}>Add to Cart</Button>
 
