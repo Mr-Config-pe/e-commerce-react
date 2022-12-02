@@ -40,8 +40,8 @@ const Purchases = () => {
                                             {purchase.cart.products.map(product => (
                                                 <Link to={`/product/${product.id}`} key={product.id} className="Link1">
                                                     <div className='container-product-purchase'>
-                                                        <div>{product.title}</div>
-                                                        <div>{product.productsInCart.quantity}</div>
+                                                        <div className='purchase-product-title'>{product.title}</div>
+                                                        <div className='purchase-product-quantity'>{product.productsInCart.quantity}</div>
                                                         <div className='purchase-product-price'> $ {product.price}</div>
                                                     </div>
                                                 </Link>
