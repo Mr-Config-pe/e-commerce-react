@@ -34,18 +34,22 @@ const Purchases = () => {
                                     </tr>
                                 </thead>
 
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                {purchase.cart.products.map(product => (
-                            <Link to={`/product/${product.id}`} key={product.id}>
-                                                <h6 className='product-title'>{product.title} {product.productsInCart.quantity} {product.price}</h6>  
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {purchase.cart.products.map(product => (
+                                                <Link to={`/product/${product.id}`} key={product.id} className="Link1">
+                                                    <div className='container-product-purchase'>
+                                                        <div>{product.title}</div>
+                                                        <div>{product.productsInCart.quantity}</div>
+                                                        <div className='purchase-product-price'> $ {product.price}</div>
+                                                    </div>
                                                 </Link>
-                                                 
-                                                ))}
-                                            </td>
-                                        </tr>
-                                    </tbody>
+
+                                            ))}
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </Table>
                         </li>
 

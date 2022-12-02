@@ -1,5 +1,20 @@
 
+.purchases .Link1{
+    list-style: none;
+    text-decoration: none;
+}
+
+.purchases .container-product-purchase{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    
+}
+
 .purchases ul{
     list-style: none;
     text-decoration: none;
 }
+
